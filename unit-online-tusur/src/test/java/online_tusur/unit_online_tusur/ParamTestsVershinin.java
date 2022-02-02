@@ -77,7 +77,40 @@ assertEquals(expectedAvgAge,actualAvgAge);
 }
 
 
+@ParameterizedTest
+@Tag("positive")
+@CsvSource({"26, 28, 35"})
+void testWithCsvSourseMinAge(int param1, int param2, int param3)
+{
+Student s1 = new Student();
+Student s2 = new Student();
+Student s3 = new Student();
+Student[] params ={s1, s2, s3};
+s1.setAge(param1);
+s2.setAge(param2);
+s3.setAge(param3);
+int expectedMinAge = 26;
+int actualMinAge = Student.minAge(params);
 
+assertEquals(expectedMinAge,actualMinAge);
 
+}
+@ParameterizedTest
+@Tag("positive")
+@CsvSource({"26, 28, 35"})
+void testWithCsvSourseMaxAge(int param1, int param2, int param3)
+{
+Student s1 = new Student();
+Student s2 = new Student();
+Student s3 = new Student();
+Student[] params ={s1, s2, s3};
+s1.setAge(param1);
+s2.setAge(param2);
+s3.setAge(param3);
+int expectedMaxAge = 35;
+int actualMaxAge = Student.maxAge(params);
 
+assertEquals(expectedMaxAge,actualMaxAge);
+
+}
 }
