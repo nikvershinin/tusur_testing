@@ -1,8 +1,11 @@
 package online_tusur.unit_online_tusur;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.api.Tag;
 
+@Execution(ExecutionMode.CONCURRENT)
 public class StudentTest {
 	/*объект тестового класса  Student*/
 	private Student s = new Student();	 	   
@@ -29,6 +32,8 @@ public class StudentTest {
 	 		s.setAge(age);
 	 	    int expectedAge = 32;
 	 	    int actualsAge=s.getAge();
+	 	    long id=Thread.currentThread().getId();
+	 	    System.out.println("tread"+id);
 	 	    assertEquals(expectedAge, actualsAge);	
 
 	 	  }
@@ -40,6 +45,8 @@ public class StudentTest {
 	 		s.setAge(age);
 	 	    int expectedAge = 18;
 	 	    int actualsAge=s.getAge();
+	 	    long id=Thread.currentThread().getId();
+	 	    System.out.println("tread"+id);
 	 	    assertEquals(expectedAge, actualsAge);	
 
 	 	  }
@@ -50,6 +57,8 @@ public class StudentTest {
 	 		s.setFirstName(firstName);
 	 	    String expectedFirstName = "Nikolay";
 	 	    String actualsFirstName=s.getFirstName();
+	 	    long id=Thread.currentThread().getId();
+	 	    System.out.println("tread"+id);
 	 	    assertEquals(expectedFirstName, actualsFirstName);	
 
 	 	  }
@@ -61,6 +70,8 @@ public class StudentTest {
 	 		s.setFirstName(firstName);
 	 	    String expectedFirstName = "Nikolay nikolay nikolay";
 	 	    String actualsFirstName=s.getFirstName();
+	 	    long id=Thread.currentThread().getId();
+	 	    System.out.println("tread"+id);
 	 	    assertEquals(expectedFirstName, actualsFirstName);	
 
 	 	  }
@@ -72,6 +83,8 @@ public class StudentTest {
 	 		s.setLastName(lastName);
 	 	    String expectedLastName = "Vershinin";
 	 	    String actualsLastName=s.getLastName();
+	 	    long id=Thread.currentThread().getId();
+	 	    System.out.println("tread"+id);
 	 	    assertEquals(expectedLastName, actualsLastName);	
 
 	 	  }
@@ -82,6 +95,8 @@ public class StudentTest {
 	 		s.setLastName(lastName);
 	 	    String expectedLastName = "Vershinin-Klaus";
 	 	    String actualsLastName=s.getLastName();
+	 	    long id=Thread.currentThread().getId();
+	 	    System.out.println("tread"+id);
 	 	    assertEquals(expectedLastName, actualsLastName);	
 
 	 	  }

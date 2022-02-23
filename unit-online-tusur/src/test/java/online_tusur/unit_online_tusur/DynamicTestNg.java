@@ -30,6 +30,8 @@ class TestFactory {
 	void testAge() {
 	s.setAge(actual);
 	int actualValue = s.getAge();
+	long id=Thread.currentThread().getId();
+	    System.out.println("tread"+id);
 	Assert.assertEquals(expected, actualValue);
 	}
 	}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="1" parallel="tests" thread-count="3">
+  <test name="Test" parallel="methods" thread-count="3">
+    <classes>
+      <class name="online_tusur.unit_online_tusur.TestFactory"/>
+      <class name="online_tusur.unit_online_tusur.DynamicTestNg"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
