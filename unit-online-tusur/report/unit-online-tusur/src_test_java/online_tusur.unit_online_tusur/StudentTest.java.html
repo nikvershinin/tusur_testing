@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>StudentTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ParamTestsVershinin (24.02.2022 23:31:18)</a> &gt; <a href="../../index.html" class="el_group">unit-online-tusur</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">StudentTest.java</span></div><h1>StudentTest.java</h1><pre class="source lang-java linenums">package online_tusur.unit_online_tusur;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
+import org.junit.jupiter.api.Tag;
+
+@Execution(ExecutionMode.CONCURRENT)
+<span class="fc" id="L9">public class StudentTest {</span>
+	/*объект тестового класса  Student*/
+<span class="fc" id="L11">	private Student s = new Student();	 	   </span>
+
+	    
+/* проверка возраста студента, 
+ выходящего за диапазон */
+//	  @Test
+//	  void test_assert() {
+//		int age = 26;
+//		s.setAge(age);
+//	    int expectedAge = 26;
+//	    int actualsAge=s.getAge();
+//	    assertEquals(expectedAge, actualsAge);	
+//
+//	  }
+	  
+	  /* проверка возраста студента, 
+	  выходящего за диапазон */
+	 	  @Test
+	   	  @Tag(&quot;positive&quot;)
+	 	  void testAgeValid() {
+<span class="fc" id="L31">	 		int age = 32;</span>
+<span class="fc" id="L32">	 		s.setAge(age);</span>
+<span class="fc" id="L33">	 	    int expectedAge = 32;</span>
+<span class="fc" id="L34">	 	    int actualsAge=s.getAge();</span>
+<span class="fc" id="L35">	 	    long id=Thread.currentThread().getId();</span>
+<span class="fc" id="L36">	 	    System.out.println(&quot;tread&quot;+id);</span>
+<span class="fc" id="L37">	 	    assertEquals(expectedAge, actualsAge);	</span>
+
+<span class="fc" id="L39">	 	  }</span>
+	 	  
+	 	  @Test
+	 	  @Tag(&quot;negative&quot;)
+	 	  void testAgeInvalid() {
+<span class="fc" id="L44">	 		int age = -17;</span>
+<span class="fc" id="L45">	 		s.setAge(age);</span>
+<span class="fc" id="L46">	 	    int expectedAge = 18;</span>
+<span class="fc" id="L47">	 	    int actualsAge=s.getAge();</span>
+<span class="fc" id="L48">	 	    long id=Thread.currentThread().getId();</span>
+<span class="fc" id="L49">	 	    System.out.println(&quot;tread&quot;+id);</span>
+<span class="fc" id="L50">	 	    assertEquals(expectedAge, actualsAge);	</span>
+
+<span class="fc" id="L52">	 	  }</span>
+	 	  @Test
+	 	  @Tag(&quot;positive&quot;)
+	 	  void testFirstNameValid() {
+<span class="fc" id="L56">	 		String firstName = &quot;nikolay&quot;;</span>
+<span class="fc" id="L57">	 		s.setFirstName(firstName);</span>
+<span class="fc" id="L58">	 	    String expectedFirstName = &quot;Nikolay&quot;;</span>
+<span class="fc" id="L59">	 	    String actualsFirstName=s.getFirstName();</span>
+<span class="fc" id="L60">	 	    long id=Thread.currentThread().getId();</span>
+<span class="fc" id="L61">	 	    System.out.println(&quot;tread&quot;+id);</span>
+<span class="fc" id="L62">	 	    assertEquals(expectedFirstName, actualsFirstName);	</span>
+
+<span class="fc" id="L64">	 	  }</span>
+	 	  
+	 	  @Test
+	 	  @Tag(&quot;negative&quot;)
+	 	  void testFirstNameInValid() {
+<span class="fc" id="L69">	 		String firstName = &quot;nikolay nikolay nikolay&quot;;</span>
+<span class="fc" id="L70">	 		s.setFirstName(firstName);</span>
+<span class="fc" id="L71">	 	    String expectedFirstName = &quot;Nikolay nikolay nikolay&quot;;</span>
+<span class="fc" id="L72">	 	    String actualsFirstName=s.getFirstName();</span>
+<span class="fc" id="L73">	 	    long id=Thread.currentThread().getId();</span>
+<span class="fc" id="L74">	 	    System.out.println(&quot;tread&quot;+id);</span>
+<span class="fc" id="L75">	 	    assertEquals(expectedFirstName, actualsFirstName);	</span>
+
+<span class="fc" id="L77">	 	  }</span>
+
+	 	 @Test
+	 	  @Tag(&quot;positive&quot;)
+	 	  void testLastNameValid() {
+<span class="fc" id="L82">	 		String lastName = &quot;Vershinin&quot;;</span>
+<span class="fc" id="L83">	 		s.setLastName(lastName);</span>
+<span class="fc" id="L84">	 	    String expectedLastName = &quot;Vershinin&quot;;</span>
+<span class="fc" id="L85">	 	    String actualsLastName=s.getLastName();</span>
+<span class="fc" id="L86">	 	    long id=Thread.currentThread().getId();</span>
+<span class="fc" id="L87">	 	    System.out.println(&quot;tread&quot;+id);</span>
+<span class="fc" id="L88">	 	    assertEquals(expectedLastName, actualsLastName);	</span>
+
+<span class="fc" id="L90">	 	  }</span>
+	 	 @Test
+	 	  @Tag(&quot;negative&quot;)
+	 	  void testLastNameInValid() {
+<span class="fc" id="L94">	 		String lastName = &quot;Vershinin-Klaus&quot;;</span>
+<span class="fc" id="L95">	 		s.setLastName(lastName);</span>
+<span class="fc" id="L96">	 	    String expectedLastName = &quot;Vershinin-Klaus&quot;;</span>
+<span class="fc" id="L97">	 	    String actualsLastName=s.getLastName();</span>
+<span class="fc" id="L98">	 	    long id=Thread.currentThread().getId();</span>
+<span class="fc" id="L99">	 	    System.out.println(&quot;tread&quot;+id);</span>
+<span class="nc" id="L100">	 	    assertEquals(expectedLastName, actualsLastName);	</span>
+
+<span class="nc" id="L102">	 	  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>ParamTestsVershinin (24.02.2022 23:31:18)</div></body></html>

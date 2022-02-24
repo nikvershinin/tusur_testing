@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>DynamicTest1.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ParamTestsVershinin (24.02.2022 23:31:18)</a> &gt; <a href="../../index.html" class="el_group">unit-online-tusur</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">DynamicTest1.java</span></div><h1>DynamicTest1.java</h1><pre class="source lang-java linenums">package online_tusur.unit_online_tusur;
+
+import org.testng.annotations.Factory;
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+
+<span class="nc" id="L8">public class DynamicTest1 {</span>
+	  //Factory with Dataprovider
+@Factory
+	Object[] factoryMethod1() {
+<span class="nc" id="L12">	return new Object[] {new FirstNameTest1()};}}</span>
+
+<span class="nc" id="L14">class FirstNameTest1 {</span>
+	@DataProvider (name=&quot;firstNamesProvider&quot;,parallel=true)
+	public Object[][] firstNamesProvider(){
+<span class="nc" id="L17">		return new Object[][] {</span>
+<span class="nc" id="L18">			{&quot;Cristiano&quot;, new Student(&quot;Cristiano&quot;,&quot;Ronaldo&quot;, 26)},</span>
+<span class="nc" id="L19">			{&quot;Bruno&quot;, new Student(&quot;Bruno&quot;,&quot;Fernandes&quot;, 26)}};}</span>
+			
+@Test (dataProvider=&quot;firstNamesProvider&quot;,threadPoolSize=5)			
+public void firstNames(String name, Student s) {
+<span class="nc" id="L23">	long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L24">    System.out.println(&quot;tread&quot;+id);</span>
+
+<span class="nc" id="L26">	Assert.assertEquals(name, s.getFirstName());</span>
+<span class="nc" id="L27">}</span>
+		}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>ParamTestsVershinin (24.02.2022 23:31:18)</div></body></html>

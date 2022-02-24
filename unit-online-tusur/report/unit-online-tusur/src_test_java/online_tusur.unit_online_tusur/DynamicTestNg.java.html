@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>DynamicTestNg.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ParamTestsVershinin (24.02.2022 23:31:18)</a> &gt; <a href="../../index.html" class="el_group">unit-online-tusur</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">DynamicTestNg.java</span></div><h1>DynamicTestNg.java</h1><pre class="source lang-java linenums">package online_tusur.unit_online_tusur;
+
+import org.testng.Assert;
+import org.testng.annotations.Factory;
+import org.testng.annotations.Test;
+
+
+<span class="nc" id="L8">public class DynamicTestNg {</span>
+  //Factory with Parameters
+	@Factory
+	
+	Object[] factoryMethod() {
+<span class="nc" id="L13">		return new Object[] {</span>
+<span class="nc" id="L14">				new TestFactory(26, 26),</span>
+<span class="nc" id="L15">				new TestFactory(28, 28),</span>
+<span class="nc" id="L16">				new TestFactory(30, 30)};</span>
+	}
+	}
+				
+class TestFactory {
+<span class="nc" id="L21">	private Student s = new Student();</span>
+	private int expected, actual;
+<span class="nc" id="L23">	public TestFactory(int expected, int actual) {</span>
+<span class="nc" id="L24">			this.expected = expected;</span>
+<span class="nc" id="L25">			this.actual = actual;</span>
+<span class="nc" id="L26">					}</span>
+					
+
+	@Test
+	void testAge() {
+<span class="nc" id="L31">	s.setAge(actual);</span>
+<span class="nc" id="L32">	int actualValue = s.getAge();</span>
+<span class="nc" id="L33">	long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L34">	    System.out.println(&quot;tread&quot;+id);</span>
+<span class="nc" id="L35">	Assert.assertEquals(expected, actualValue);</span>
+<span class="nc" id="L36">	}</span>
+	}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>ParamTestsVershinin (24.02.2022 23:31:18)</div></body></html>

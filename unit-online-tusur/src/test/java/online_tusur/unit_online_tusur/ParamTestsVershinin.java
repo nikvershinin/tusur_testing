@@ -113,4 +113,33 @@ int actualMaxAge = Student.maxAge(params);
 assertEquals(expectedMaxAge,actualMaxAge);
 
 }
+@Test
+ @Tag("positive")
+ void testConstructor() {
+Student s4 = new Student("Paolo", "Maldini", 48);
+assertEquals("Maldini Paolo",s4.getFullName());
+   
+ }
+
+@Test
+ @Tag("positive")
+ void testElseFirstName() {
+	String firstName = "n";
+	s.setFirstName(firstName);
+   String expectedFirstName = "N";
+   String actualsFirstName=s.getFirstName();
+   assertEquals(expectedFirstName, actualsFirstName);	
+
+ }
+@Test
+@Tag("positive")
+void testElseLasstName() {
+	String lastName = "v";
+	s.setLastName(lastName);
+  String expectedLastName = "V";
+  String actualsLastName=s.getLastName();
+  assertEquals(expectedLastName, actualsLastName);	
+
+}
+
 }

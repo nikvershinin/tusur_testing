@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>NewTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ParamTestsVershinin (24.02.2022 23:31:18)</a> &gt; <a href="../../index.html" class="el_group">unit-online-tusur</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">NewTest.java</span></div><h1>NewTest.java</h1><pre class="source lang-java linenums">package online_tusur.unit_online_tusur;
+import static org.testng.Assert.assertEquals;
+import org.testng.annotations.*;
+
+<span class="nc" id="L5">public class NewTest {</span>
+<span class="nc" id="L6">	Student s = new Student();</span>
+@Test(groups= {&quot;SimpleTests&quot;},enabled=false)
+void testAge1() {
+<span class="nc" id="L9">		int age = 32;</span>
+<span class="nc" id="L10">		s.setAge(age);</span>
+<span class="nc" id="L11">	    int expectedAge = 32;</span>
+<span class="nc" id="L12">	    int actualsAge=s.getAge();</span>
+<span class="nc" id="L13">	    assertEquals(expectedAge, actualsAge);	</span>
+<span class="nc" id="L14">}</span>
+
+@Test(groups= {&quot;SimpleTests&quot;},enabled=false)
+void testAge2() {
+<span class="nc" id="L18">		int age = 42;</span>
+<span class="nc" id="L19">		s.setAge(age);</span>
+<span class="nc" id="L20">	    int expectedAge = 42;</span>
+<span class="nc" id="L21">	    int actualsAge=s.getAge();</span>
+<span class="nc" id="L22">	    assertEquals(expectedAge, actualsAge);	</span>
+<span class="nc" id="L23">}</span>
+@Test(groups= {&quot;TestsforFullname&quot;},enabled=true)
+@Parameters({&quot;age&quot;, &quot;fn&quot;, &quot;ln&quot;})
+void ParametricTests(@Optional(&quot;0&quot;) int age, @Optional(&quot;0&quot;) String fn, @Optional(&quot;0&quot;) String ln)
+{
+<span class="nc" id="L28">Student s1 = new Student();</span>
+<span class="nc" id="L29">s1.setAge(age);</span>
+<span class="nc" id="L30">s1.setFirstName(fn);</span>
+<span class="nc" id="L31">s1.setLastName(ln);</span>
+<span class="nc" id="L32">assertEquals(&quot;Stones John&quot;,s1.getFullName());</span>
+<span class="nc" id="L33">}</span>
+
+@DataProvider(name=&quot;data&quot;)
+public static Object[][] getData(){
+<span class="nc" id="L37">	  return new Object[][] {	  </span>
+<span class="nc" id="L38">	  {&quot;John&quot;, &quot;John&quot;},</span>
+<span class="nc" id="L39">	  {&quot;Smith&quot;, &quot;Smith&quot;},</span>
+<span class="nc" id="L40">	  {&quot;Mark&quot;, &quot;Mark&quot;},</span>
+	  
+	  };
+}
+
+@Test(dataProvider=&quot;data&quot;)
+void TestNames(String input, String expectedName) {
+<span class="nc" id="L47">	 Student s = new Student();</span>
+<span class="nc" id="L48">	 s.setFirstName(input);</span>
+<span class="nc" id="L49">	 String actual = s.getFirstName();</span>
+<span class="nc" id="L50">	 assertEquals(expectedName,actual);</span>
+<span class="nc" id="L51">}</span>
+}
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>ParamTestsVershinin (24.02.2022 23:31:18)</div></body></html>
