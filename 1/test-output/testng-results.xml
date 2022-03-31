@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="10697" started-at="2022-04-01T02:49:26 GMT+05:00" finished-at="2022-04-01T02:49:37 GMT+05:00">
+    <groups>
+    </groups>
+    <test name="test_Chrome_1_TNG" duration-ms="7619" started-at="2022-04-01T02:49:26 GMT+05:00" finished-at="2022-04-01T02:49:34 GMT+05:00">
+      <class name="TestNGSelemiun">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestNGSelemiun@4c762604]" name="setUp" is-config="true" duration-ms="7" started-at="2022-04-01T02:49:26 GMT+05:00" finished-at="2022-04-01T02:49:26 GMT+05:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="test_Chrome_1_TNG()[pri:0, instance:TestNGSelemiun@4c762604]" name="test_Chrome_1_TNG" duration-ms="7571" started-at="2022-04-01T02:49:26 GMT+05:00" finished-at="2022-04-01T02:49:34 GMT+05:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Chrome_1_TNG -->
+      </class> <!-- TestNGSelemiun -->
+    </test> <!-- test_Chrome_1_TNG -->
+    <test name="Mozilla" duration-ms="10697" started-at="2022-04-01T02:49:26 GMT+05:00" finished-at="2022-04-01T02:49:37 GMT+05:00">
+      <class name="TestNGSelemiun">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestNGSelemiun@543c6f6d]" name="setUp" is-config="true" duration-ms="7" started-at="2022-04-01T02:49:26 GMT+05:00" finished-at="2022-04-01T02:49:26 GMT+05:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="test_Mozilla_1_TNG()[pri:0, instance:TestNGSelemiun@543c6f6d]" name="test_Mozilla_1_TNG" duration-ms="10649" started-at="2022-04-01T02:49:26 GMT+05:00" finished-at="2022-04-01T02:49:37 GMT+05:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Mozilla_1_TNG -->
+      </class> <!-- TestNGSelemiun -->
+    </test> <!-- Mozilla -->
+  </suite> <!-- Suite -->
+</testng-results>
