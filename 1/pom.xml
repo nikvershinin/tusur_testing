@@ -3,5 +3,65 @@
   <groupId>TestWebdriverVershinin</groupId>
   <artifactId>1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>TestWebdriverVNO</name>
+  <name>RunnerTestVershinin</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <junit.jupiter.version>5.4.0</junit.jupiter.version>
+     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+<dependencies>
+       
+  <dependency>
+  <groupId>io.cucumber</groupId>
+  <artifactId>cucumber-java</artifactId>
+  <version>7.2.3</version>
+  </dependency>
+
+  <dependency>
+  <groupId>io.cucumber</groupId>
+  <artifactId>cucumber-core</artifactId>
+  <version>7.2.3</version>
+  </dependency>
+
+<dependency>
+  <groupId>io.cucumber</groupId>
+  <artifactId>cucumber-junit</artifactId>
+  <version>7.2.3</version>
+</dependency>
+
+  </dependencies>
+  <build>
+      <plugins>
+         <!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
+         <plugin>
+         	<artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.0</version>
+            <configuration>
+            			 <outputEncoding>UTF-8</outputEncoding>
+            		<inputEncoding>UTF-8</inputEncoding>
+          </configuration>
+          
+          </plugin>
+                   
+       
+         <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <outputEncoding>UTF-8</outputEncoding>
+                    <inputEncoding>UTF-8</inputEncoding>
+ 
+         
+                </configuration>
+            </plugin>
+                           
+      </plugins>
+      
+   </build>
+  
+  
 </project>
